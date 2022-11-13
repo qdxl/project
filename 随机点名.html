@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .text{
+            margin: 0 auto;
+            width: 300px;
+            height: 200px;
+            border: 1em;
+            border-color: black;
+            background-color: aliceblue;
+            text-align: center;
+            font-size: 50px;
+        }
+        .start{
+            /* display: none; */
+            float: left;
+            width: 60px;
+            height: 40px;
+            margin-left: 450px;
+        }
+        .end{
+           /* display: none; */
+            float: right;
+            width: 60px;
+            height: 40px;
+            margin-right: 450px;
+        }
+    </style>   
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="text"></div>
+    <button class="start">开始</button>
+    <button class="end">结束</button>
+    <script>
+        let s=document.querySelector('.start')
+        let e=document.querySelector('.end')
+        let arr=['张三','李四','王五','赵六']
+        let box=document.querySelector('.text')
+        let timer=0
+        function random(min, max) {
+             return Math.round(Math.random() * (max - min)) + min;}
+             
+            
+            
+                s.addEventListener('click',function(){
+                    timer=setInterval(
+                        function(){
+                        box.innerHTML=arr[random(0,3)]   
+                    },50 )
+                    }
+                                )
+            e.addEventListener('click',function(){
+                clearInterval(timer)
+            })
+
+                
+            
+                
+            
+
+        
+    </script>
+</body>
+</html>
